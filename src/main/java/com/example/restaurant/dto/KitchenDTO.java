@@ -8,22 +8,21 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Date;
 
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class OrderDTO implements Serializable {
+public class KitchenDTO implements Serializable {
 
     private String id;
-    private String restaurantCode;
-    private List<String> dishes;
-    private Long timestamp;
+    private String name;
+    private Date createdDateTime;
+    private Date updatedDateTime;
 
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
     }
-
 }

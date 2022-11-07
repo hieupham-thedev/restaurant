@@ -7,23 +7,26 @@ import lombok.Setter;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import javax.persistence.Column;
 import java.io.Serializable;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.Date;
 
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class OrderDTO implements Serializable {
+public class DishDTO implements Serializable {
 
     private String id;
-    private String restaurantCode;
-    private List<String> dishes;
-    private Long timestamp;
+    private String name;
+    private Integer stock;
+    private BigDecimal price;
+    private Date createdDateTime;
+    private Date updatedDateTime;
 
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);
     }
-
 }
